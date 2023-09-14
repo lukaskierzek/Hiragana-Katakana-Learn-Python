@@ -7,7 +7,9 @@ Python 3.11.5
 
 ## Instruction
 After stating the program, a menu with options is displayed
+
 ![menu](Menu.png)
+
 - Enter option `1` to proceed to the Hiragana gojuuon test.
 - Enter option `2` to proceed to the Katakana gojuuon test.
 - Enter option `3` to proceed to exit the program.
