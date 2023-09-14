@@ -1,6 +1,7 @@
 #Directories
 .idea/
 Application/__pycache__/
+Tests/__pycache__/
 
 #Files
 Pipfile
