@@ -49,11 +49,11 @@ from Application.Hiragana.hiragana_syllables import Gojuuon as hg
         ("ほ", hg.HO),
         # endregion
         # region constant M
-        ("は", hg.HA),
-        ("ひ", hg.HI),
-        ("ふ", hg.FU),
-        ("へ", hg.HE),
-        ("ほ", hg.HO),
+        ("ま", hg.MA),
+        ("み", hg.MI),
+        ("む", hg.MU),
+        ("め", hg.ME),
+        ("も", hg.MO),
         # endregion
         # region constant Y
         ("や", hg.YA),
