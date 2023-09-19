@@ -19,7 +19,7 @@ class Gojuuon(StrEnum):
     # endregion
     # region constant S
     SA = "さ"
-    SI = "し"
+    SHI = "し"
     SU = "す"
     SE = "せ"
     SO = "そ"

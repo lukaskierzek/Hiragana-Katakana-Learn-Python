@@ -2,8 +2,19 @@ import pytest
 from Application.Hiragana.hiragana_syllables import Gojuuon as hg
 
 
+@pytest.fixture
+def number_of_vowels_of_hiragana_gojuuon():
+    vowels_of_hiragana_gojuuon: list[str] = [hg.A, hg.I, hg.U, hg.E, hg.O, hg.N]
+    return len(vowels_of_hiragana_gojuuon)
+
+
+@pytest.fixture
+def number_of_hiragana_gojuuon():
+    return len(hg)
+
+
 @pytest.mark.parametrize(
-    "excepted_syllable, actual_syllable",
+    "excepted_hiragana_syllable, actual_hiragana_syllable",
     [
         # region syllables vowels
         ("あ", hg.A),
@@ -22,7 +33,7 @@ from Application.Hiragana.hiragana_syllables import Gojuuon as hg
         # endregion
         # region constant S
         ("さ", hg.SA),
-        ("し", hg.SI),
+        ("し", hg.SHI),
         ("す", hg.SU),
         ("せ", hg.SE),
         ("そ", hg.SO),
@@ -75,5 +86,23 @@ from Application.Hiragana.hiragana_syllables import Gojuuon as hg
         # endregion
     ]
 )
-def test_hiragana_gojuuon(excepted_syllable: str, actual_syllable: str):
-    assert excepted_syllable == actual_syllable
+def test_hiragana_gojuuon(excepted_hiragana_syllable: str, actual_hiragana_syllable: str):
+    assert excepted_hiragana_syllable == actual_hiragana_syllable
+
+
+def test_number_of_hiragana_gojuuon_is_48(number_of_hiragana_gojuuon):
+    expected_number_of_hiragana_gojuuon: int = 48
+    actual_number_of_hiragana_gojuuon: int = number_of_hiragana_gojuuon
+    assert expected_number_of_hiragana_gojuuon == actual_number_of_hiragana_gojuuon
+
+
+def test_number_of_vowels_of_hiragana_gojuuon_is_6(number_of_vowels_of_hiragana_gojuuon):
+    expected_number_of_vowels_of_hiragana_gojuuon: int = 6
+    actual_number_of_vowels_of_hiragana_gojuuon: int = number_of_vowels_of_hiragana_gojuuon
+    assert expected_number_of_vowels_of_hiragana_gojuuon == actual_number_of_vowels_of_hiragana_gojuuon
+
+
+def test_number_of_contants_of_hiragana_gojuuon_is_42(number_of_hiragana_gojuuon, number_of_vowels_of_hiragana_gojuuon):
+    expected_number_of_contants_of_hiragana_gojuuon: int = 42
+    actual_number_of_contants_of_hiragana_gojuuon: int = number_of_hiragana_gojuuon - number_of_vowels_of_hiragana_gojuuon
+    assert expected_number_of_contants_of_hiragana_gojuuon == actual_number_of_contants_of_hiragana_gojuuon
