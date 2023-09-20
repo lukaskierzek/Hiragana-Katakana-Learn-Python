@@ -1,6 +1,7 @@
 from os import system, name
 
 import Application.app_constans as appc
+from Application.Katakana.katakana_syllables import Gojuuon as kg
 
 
 class App:
@@ -11,7 +12,7 @@ class App:
 
     @staticmethod
     def show_menu() -> None:
-        print(f"======= MENU =======")
+        print("======= MENU =======")
         print("[1] Hiragana")
         print("[2] Katakana")
         print("[3] Exit")
@@ -25,3 +26,15 @@ class App:
         print(notice)
         input()
         App.clear_console()
+
+    @staticmethod
+    def header_with_answers(answer_list: list[str], syllable):
+        print(f"======= {syllable} =======")
+        for syllable in answer_list:
+            print(f"> {kg(syllable).name}")
+        print(appc.Strings.ENTER_ANSWER)
+
+    @staticmethod
+    def notice_good_answer():
+        print(appc.Strings.JAPANESE_CORRECT_ANSWER)
+        print(appc.Strings.AGAIN_QUESTION)

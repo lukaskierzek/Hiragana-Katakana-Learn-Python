@@ -1,5 +1,6 @@
-from Application.app import App
 from Application import app_constans as appc
+from Application.Katakana.katakana import Katakana as k
+from Application.app import App
 
 
 def main():
@@ -11,6 +12,7 @@ def main():
                 App.clear_console()
             case "2":
                 App.clear_console()
+                k.learn_syllabary()
             case "3":
                 print(appc.Strings.JAPANESE_SEE_YOU_LATER)
                 return
