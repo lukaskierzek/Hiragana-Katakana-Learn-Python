@@ -2,6 +2,9 @@ from enum import StrEnum, IntEnum
 
 
 class Strings(StrEnum):
+    ENTER_KEY_TO_RETURN_TO_MENU = "Enter to any key to return to menu"
+    ENTER_ANSWER = "Enter answer: "
+    ENTER_KEY_AGAIN = "Nope!\nEnter to any key to again!"
     WRONG_OPTION = "Wrong option!\nEnter any key to continue"
     AGAIN_NO = "N"
     AGAIN_YES = "Y"
