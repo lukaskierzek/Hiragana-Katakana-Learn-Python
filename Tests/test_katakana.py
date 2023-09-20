@@ -1,5 +1,6 @@
 import pytest
 from Application.Katakana.katakana_syllables import Gojuuon as kg
+from Application.Katakana.katakana import Katakana as k
 
 
 @pytest.fixture
@@ -106,3 +107,9 @@ def test_number_of_contants_of_katakana_gojuuon_is_42(number_of_katakana_gojuuon
     expected_number_of_contants_of_katakana_gojuuon: int = 42
     actual_number_of_contants_of_katakana_gojuuon: int = number_of_katakana_gojuuon - number_of_vowels_of_katakana_gojuuon
     assert expected_number_of_contants_of_katakana_gojuuon == actual_number_of_contants_of_katakana_gojuuon
+
+
+def test_katakana_syllabary_gojuuon_list_contains_all_katakana_gojuuon():
+    expected_list = list(map(str, kg))
+    actual_list = k.syllabary_gojuuon_list()
+    assert expected_list == actual_list

@@ -1,5 +1,6 @@
 import pytest
 from Application.Hiragana.hiragana_syllables import Gojuuon as hg
+from Application.Hiragana.hiragana import Hiragana as h
 
 
 @pytest.fixture
@@ -106,3 +107,9 @@ def test_number_of_contants_of_hiragana_gojuuon_is_42(number_of_hiragana_gojuuon
     expected_number_of_contants_of_hiragana_gojuuon: int = 42
     actual_number_of_contants_of_hiragana_gojuuon: int = number_of_hiragana_gojuuon - number_of_vowels_of_hiragana_gojuuon
     assert expected_number_of_contants_of_hiragana_gojuuon == actual_number_of_contants_of_hiragana_gojuuon
+
+
+def test_hiragana_syllabary_gojuuon_list_contains_all_hiragana_gojuuon():
+    expected_list = list(map(str, hg))
+    actual_list = h.syllabary_gojuuon_list()
+    assert expected_list == actual_list
