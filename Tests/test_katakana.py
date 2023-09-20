@@ -1,6 +1,7 @@
 import pytest
-from Application.Katakana.katakana_syllables import Gojuuon as kg
+
 from Application.Katakana.katakana import Katakana as k
+from Application.Katakana.katakana_syllables import Gojuuon as kg
 
 
 @pytest.fixture
@@ -12,6 +13,11 @@ def number_of_vowels_of_katakana_gojuuon():
 @pytest.fixture
 def number_of_katakana_gojuuon():
     return len(kg)
+
+
+@pytest.fixture
+def katakana_syllabary_gojuuon_list():
+    return k.syllabary_gojuuon_list()
 
 
 @pytest.mark.parametrize(
@@ -109,7 +115,19 @@ def test_number_of_contants_of_katakana_gojuuon_is_42(number_of_katakana_gojuuon
     assert expected_number_of_contants_of_katakana_gojuuon == actual_number_of_contants_of_katakana_gojuuon
 
 
-def test_katakana_syllabary_gojuuon_list_contains_all_katakana_gojuuon():
+def test_katakana_syllabary_gojuuon_list_contains_all_katakana_gojuuon(katakana_syllabary_gojuuon_list):
     expected_list = list(map(str, kg))
-    actual_list = k.syllabary_gojuuon_list()
+    actual_list = katakana_syllabary_gojuuon_list
     assert expected_list == actual_list
+
+
+def test_get_not_the_same_syllable_from_syllable_list(katakana_syllabary_gojuuon_list):
+    syllable_list = katakana_syllabary_gojuuon_list
+    syllable = k.not_the_same_syllable_from_list(syllable_list)
+    assert syllable not in syllable_list
+
+
+def test_get_random_syllable_from_katkana_syllable_list_is_in_katakana_syllable_list(katakana_syllabary_gojuuon_list):
+    katakana_syllable_list = katakana_syllabary_gojuuon_list
+    syllable = k.random_syllable()
+    assert syllable in katakana_syllable_list

@@ -1,4 +1,5 @@
 import pytest
+
 import Application.app_constans as appc
 
 
@@ -10,6 +11,9 @@ import Application.app_constans as appc
         ("Y", appc.Strings.AGAIN_YES),
         ("Again? [Y/N]", appc.Strings.AGAIN_QUESTION),
         ("Enter option number:\n", appc.Strings.OPTION_NUMBER),
+        ("Enter answer: ", appc.Strings.ENTER_ANSWER),
+        ("Nope!\nEnter to any key to again!", appc.Strings.ENTER_KEY_AGAIN),
+        ("Enter to any key to return to menu", appc.Strings.ENTER_KEY_TO_RETURN_TO_MENU),
     ]
 )
 def test_constans_string(expected_string: str, actual_string: str):
