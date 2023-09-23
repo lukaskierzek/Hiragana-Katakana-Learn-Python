@@ -1,4 +1,5 @@
 from Application import app_constans as appc
+from Application.Hiragana.hiragana import Hiragana as h
 from Application.Katakana.katakana import Katakana as k
 from Application.app import App
 
@@ -10,6 +11,7 @@ def main():
         match option:
             case "1":
                 App.clear_console()
+                h.learn_syllabary()
             case "2":
                 App.clear_console()
                 k.learn_syllabary()
