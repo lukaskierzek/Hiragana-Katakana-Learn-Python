@@ -20,12 +20,12 @@ class Syllabary(ABC):
 
     @staticmethod
     @abstractmethod
-    def learn_syllabary() -> None:
+    def question_syllabary_gojuuon(answer_list: list[str],
+                                   syllabary_gojuuon_list: list[str],
+                                   syllable_correct_answer: list[str]) -> None:
         pass
 
     @staticmethod
     @abstractmethod
-    def question_syllabary_gojuuon(answer_list: list[str],
-                                   syllabary_gojuuon_list: list[str],
-                                   syllable_correct_answer: list[str]) -> None:
+    def learn_syllabary() -> None:
         pass
