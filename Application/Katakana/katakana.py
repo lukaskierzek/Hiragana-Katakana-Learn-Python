@@ -42,8 +42,8 @@ class Katakana(Syllabary):
         return_to_menu: bool = False
         new_question: bool = False
         answer_list: list[str] = []
-        syllabary_gojuuon_list = Katakana.syllabary_gojuuon_list()
-        syllable_correct_answer = []
+        syllabary_gojuuon_list: list[str] = Katakana.syllabary_gojuuon_list()
+        syllable_correct_answer: list[str] = []
 
         Katakana.question_syllabary_gojuuon(answer_list, syllabary_gojuuon_list, syllable_correct_answer)
 

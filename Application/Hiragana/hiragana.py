@@ -42,8 +42,8 @@ class Hiragana(Syllabary):
         return_to_menu: bool = False
         new_question: bool = False
         answer_list: list[str] = []
-        syllabary_gojuuon_list = Hiragana.syllabary_gojuuon_list()
-        syllable_correct_answer = []
+        syllabary_gojuuon_list: list[str] = Hiragana.syllabary_gojuuon_list()
+        syllable_correct_answer: list[str] = []
 
         Hiragana.question_syllabary_gojuuon(answer_list, syllabary_gojuuon_list, syllable_correct_answer)
 
