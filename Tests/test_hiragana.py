@@ -113,3 +113,15 @@ def test_hiragana_syllabary_gojuuon_list_contains_all_hiragana_gojuuon():
     expected_list = list(map(str, hg))
     actual_list = h.syllabary_gojuuon_list()
     assert expected_list == actual_list
+
+
+def test_get_not_the_same_syllable_from_syllable_list(hiragana_syllabary_gojuuon_list):
+    syllable_list = hiragana_syllabary_gojuuon_list
+    syllable = h.not_the_same_syllable_from_list(syllable_list)
+    assert syllable not in syllable_list
+
+
+def test_get_random_syllable_from_katkana_syllable_list_is_in_hiragana_syllable_list(hiragana_syllabary_gojuuon_list):
+    hiragana_syllable_list = hiragana_syllabary_gojuuon_list
+    syllable = h.random_syllable()
+    assert syllable in hiragana_syllable_list

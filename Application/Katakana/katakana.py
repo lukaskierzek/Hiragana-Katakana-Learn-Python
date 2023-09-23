@@ -23,6 +23,14 @@ class Katakana(Syllabary):
         return list(map(str, kg))
 
     @staticmethod
+    def question_syllabary_gojuuon(answer_list,
+                                   syllabary_gojuuon_list,
+                                   syllable_correct_answer):
+        for i in range(appc.Numbers.MAX_NUMBER_OF_ANSWERS):
+            answer_list.append(Katakana.not_the_same_syllable_from_list(syllabary_gojuuon_list))
+        syllable_correct_answer.append(choice(answer_list))
+
+    @staticmethod
     def learn_syllabary():
         return_to_menu: bool = False
         new_question: bool = False
@@ -41,9 +49,9 @@ class Katakana(Syllabary):
                 Katakana.question_syllabary_gojuuon(answer_list, syllabary_gojuuon_list, syllable_correct_answer)
 
             App.header_with_answers(answer_list, syllable_correct_answer[0])
-
             option = input().upper()
             syllable_correct_answer_name = kg(syllable_correct_answer[0]).name
+
             if option != syllable_correct_answer_name:
                 App.notice_message(appc.Strings.ENTER_KEY_AGAIN)
                 App.clear_console()
@@ -65,11 +73,3 @@ class Katakana(Syllabary):
 
         App.notice_message(appc.Strings.ENTER_KEY_TO_RETURN_TO_MENU)
         App.clear_console()
-
-    @staticmethod
-    def question_syllabary_gojuuon(answer_list,
-                                   syllabary_gojuuon_list,
-                                   syllable_correct_answer):
-        for i in range(appc.Numbers.MAX_NUMBER_OF_ANSWERS):
-            answer_list.append(Katakana.not_the_same_syllable_from_list(syllabary_gojuuon_list))
-        syllable_correct_answer.append(choice(answer_list))
