@@ -1,7 +1,7 @@
 from random import choice
 
 import Application.app_constans as appc
-from Application.Hiragana.hiragana_syllables import Gojuuon as hg
+from Application.Hiragana.hiragana_syllables import HiraganaGojuuon as hg
 from Application.app import App
 from Application.syllabary import Syllabary
 
@@ -9,12 +9,19 @@ from Application.syllabary import Syllabary
 class Hiragana(Syllabary):
 
     @staticmethod
-    def random_syllable() -> str:
-        return choice(Hiragana.syllabary_gojuuon_list())
+    def header_with_answers(answer_list, syllable) -> None:
+        print(f"======= {syllable} =======")
+        for syllable in answer_list:
+            print(f"> {hg(syllable).name}")
+        print(appc.Strings.ENTER_ANSWER)
+
+    @staticmethod
+    def random_syllable(syllable_list) -> str:
+        return choice(syllable_list)
 
     @staticmethod
     def not_the_same_syllable_from_list(syllable_list):
-        syllable = Hiragana.random_syllable()
+        syllable = Hiragana.random_syllable(syllable_list)
         syllable_list.remove(syllable)
         return syllable
 
@@ -48,7 +55,7 @@ class Hiragana(Syllabary):
                 syllabary_gojuuon_list = Hiragana.syllabary_gojuuon_list()
                 Hiragana.question_syllabary_gojuuon(answer_list, syllabary_gojuuon_list, syllable_correct_answer)
 
-            App.header_with_answers(answer_list, syllable_correct_answer[0])
+            Hiragana.header_with_answers(answer_list, syllable_correct_answer[0])
             option = input().upper()
             syllable_correct_answer_name = hg(syllable_correct_answer[0]).name
 

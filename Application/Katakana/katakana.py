@@ -1,7 +1,7 @@
 from random import choice
 
 import Application.app_constans as appc
-from Application.Katakana.katakana_syllables import Gojuuon as kg
+from Application.Katakana.katakana_syllables import KatakanaGojuuon as kg
 from Application.app import App
 from Application.syllabary import Syllabary
 
@@ -9,14 +9,21 @@ from Application.syllabary import Syllabary
 class Katakana(Syllabary):
 
     @staticmethod
+    def header_with_answers(answer_list, syllable):
+        print(f"======= {syllable} =======")
+        for syllable in answer_list:
+            print(f"> {kg(syllable).name}")
+        print(appc.Strings.ENTER_ANSWER)
+
+    @staticmethod
     def not_the_same_syllable_from_list(syllable_list):
-        syllable = Katakana.random_syllable()
+        syllable = Katakana.random_syllable(syllable_list)
         syllable_list.remove(syllable)
         return syllable
 
     @staticmethod
-    def random_syllable() -> str:
-        return choice(Katakana.syllabary_gojuuon_list())
+    def random_syllable(syllable_list) -> str:
+        return choice(syllable_list)
 
     @staticmethod
     def syllabary_gojuuon_list():
@@ -48,7 +55,7 @@ class Katakana(Syllabary):
                 syllabary_gojuuon_list = Katakana.syllabary_gojuuon_list()
                 Katakana.question_syllabary_gojuuon(answer_list, syllabary_gojuuon_list, syllable_correct_answer)
 
-            App.header_with_answers(answer_list, syllable_correct_answer[0])
+            Katakana.header_with_answers(answer_list, syllable_correct_answer[0])
             option = input().upper()
             syllable_correct_answer_name = kg(syllable_correct_answer[0]).name
 

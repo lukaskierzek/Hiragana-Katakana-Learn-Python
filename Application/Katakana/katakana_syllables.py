@@ -1,7 +1,7 @@
 from enum import StrEnum
 
 
-class Gojuuon(StrEnum):
+class KatakanaGojuuon(StrEnum):
     # region vowels
     A = "ア"
     I = "イ"
