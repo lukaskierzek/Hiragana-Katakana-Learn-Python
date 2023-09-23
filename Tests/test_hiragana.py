@@ -1,5 +1,5 @@
 import pytest
-from Application.Hiragana.hiragana_syllables import Gojuuon as hg
+from Application.Hiragana.hiragana_syllables import HiraganaGojuuon as hg
 from Application.Hiragana.hiragana import Hiragana as h
 
 
@@ -114,18 +114,16 @@ def test_number_of_contants_of_hiragana_gojuuon_is_42(number_of_hiragana_gojuuon
 
 
 def test_hiragana_syllabary_gojuuon_list_contains_all_hiragana_gojuuon():
-    expected_list = list(map(str, hg))
-    actual_list = h.syllabary_gojuuon_list()
+    expected_list: list[str] = list(map(str, hg))
+    actual_list: list[str] = h.syllabary_gojuuon_list()
     assert expected_list == actual_list
 
 
 def test_get_not_the_same_syllable_from_syllable_list(hiragana_syllabary_gojuuon_list):
-    syllable_list = hiragana_syllabary_gojuuon_list
-    syllable = h.not_the_same_syllable_from_list(syllable_list)
-    assert syllable not in syllable_list
+    syllable: str = h.not_the_same_syllable_from_list(hiragana_syllabary_gojuuon_list)
+    assert syllable not in hiragana_syllabary_gojuuon_list
 
 
 def test_get_random_syllable_from_katkana_syllable_list_is_in_hiragana_syllable_list(hiragana_syllabary_gojuuon_list):
-    hiragana_syllable_list = hiragana_syllabary_gojuuon_list
-    syllable = h.random_syllable()
-    assert syllable in hiragana_syllable_list
+    syllable = h.random_syllable(hiragana_syllabary_gojuuon_list)
+    assert syllable in hiragana_syllabary_gojuuon_list
