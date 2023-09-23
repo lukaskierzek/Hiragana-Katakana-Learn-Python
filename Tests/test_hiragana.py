@@ -14,6 +14,10 @@ def number_of_hiragana_gojuuon():
     return len(hg)
 
 
+@pytest.fixture
+def hiragana_syllabary_gojuuon_list():
+    return h.syllabary_gojuuon_list()
+
 @pytest.mark.parametrize(
     "excepted_hiragana_syllable, actual_hiragana_syllable",
     [
