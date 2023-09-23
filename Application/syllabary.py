@@ -10,7 +10,7 @@ class Syllabary(ABC):
 
     @staticmethod
     @abstractmethod
-    def random_syllable() -> str:
+    def random_syllable(syllable_list: list[str]) -> str:
         pass
 
     @staticmethod
@@ -23,6 +23,11 @@ class Syllabary(ABC):
     def question_syllabary_gojuuon(answer_list: list[str],
                                    syllabary_gojuuon_list: list[str],
                                    syllable_correct_answer: list[str]) -> None:
+        pass
+
+    @staticmethod
+    @abstractmethod
+    def header_with_answers(answer_list: list[str], syllable: str) -> None:
         pass
 
     @staticmethod
