@@ -16,3 +16,7 @@ After stating the program, a menu with options is displayed
 
 *The next instruction is the same for Hiragana and Katakana.*
 
+After entering option 1 or option 2, a syllable is displayed with sample answers.
+
+If you enter the correct answer, it will display a message about the good answer and ask you to continue.
+Otherwise, an incorrect answer message will be displayed. 
