@@ -1,14 +1,19 @@
 # Hiragana and Katakana Learn
+
 ## Description
-A console program to help you learn [Hiragana](https://en.wikipedia.org/wiki/Hiragana "Article about Hiragana") gojuuon and [Hiragana](https://en.wikipedia.org/wiki/Katakana "Article about Katakana") gojuuon.
+
+A console program to help you learn [Hiragana](https://en.wikipedia.org/wiki/Hiragana "Article about Hiragana") gojuuon
+and [Hiragana](https://en.wikipedia.org/wiki/Katakana "Article about Katakana") gojuuon.
 
 ## Backend
+
 Python 3.11.5
 
 ## Instruction
+
 After stating the program, a menu with options is displayed
 
-![menu](Menu.png)
+![menu](Images/Menu.png)
 
 - Enter option `1` to proceed to the Hiragana gojuuon test.
 - Enter option `2` to proceed to the Katakana gojuuon test.
@@ -18,5 +23,17 @@ After stating the program, a menu with options is displayed
 
 After entering option `1` or option `2`, a syllable is displayed with sample answers.
 
+![katakana_answer](Images/Katakana_ask.png)
+
 If you enter the correct answer, it will display a message about the good answer and ask you to continue.
-Otherwise, an incorrect answer message will be displayed. 
+
+![good_answer](Images/Good_answer.png)
+
+- Pressing `Y` or `y` will display new syllable with samlpe answers.
+- Pressing `N` or `n` to proceed to the menu.
+
+Otherwise, an incorrect answer message will be displayed.
+
+![incorrect_answer](Images/Incorrect_answer.png)
+
+Pressing any key to again will redisplay the same syllable with sample answers.
