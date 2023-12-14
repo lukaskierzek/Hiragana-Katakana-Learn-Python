@@ -1,6 +1,7 @@
 import pytest
-from Application.Hiragana.hiragana_syllables import HiraganaGojuuon as hg
+
 from Application.Hiragana.hiragana import Hiragana as h
+from Application.Hiragana.hiragana_syllables import HiraganaGojuuon as hg
 
 
 @pytest.fixture
@@ -17,6 +18,7 @@ def number_of_hiragana_gojuuon():
 @pytest.fixture
 def hiragana_syllabary_gojuuon_list():
     return h.syllabary_gojuuon_list()
+
 
 @pytest.mark.parametrize(
     "excepted_hiragana_syllable, actual_hiragana_syllable",
