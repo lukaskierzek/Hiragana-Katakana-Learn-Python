@@ -1,13 +1,19 @@
 # Hiragana and Katakana Learn
 
-## Description
-
 A console program to help you learn [Hiragana](https://en.wikipedia.org/wiki/Hiragana "Article about Hiragana") gojuuon
 and [Hiragana](https://en.wikipedia.org/wiki/Katakana "Article about Katakana") gojuuon.
 
-## Backend
+## Table of contents
 
-Python 3.11.5
+* [Technologies Used](#technologies-used)
+* [Instruction](#instruction)
+* [Project Status](#project-status)
+* [Licence](#licence)
+
+## Technologies Used
+
+- Python 3.11.5
+- PyTest 7.4.2
 
 ## Instruction
 
@@ -37,3 +43,13 @@ Otherwise, an incorrect answer message will be displayed.
 ![incorrect_answer](Images/Incorrect_answer.png)
 
 Pressing any key to again will redisplay the same syllable with sample answers.
+
+## Project Status
+
+Completed
+
+## Licence
+
+> [Full content of the licence](LICENCE).
+
+MIT
