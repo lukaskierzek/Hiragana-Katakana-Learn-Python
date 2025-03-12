@@ -1,0 +1,7 @@
+services:
+  hiragana_katakana_learn_app:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/hiragana_katakana_learn_app
