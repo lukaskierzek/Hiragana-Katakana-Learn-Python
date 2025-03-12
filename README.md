@@ -12,8 +12,8 @@ and [Hiragana](https://en.wikipedia.org/wiki/Katakana "Article about Katakana") 
 
 ## Technologies Used
 
-- Python 3.11.5
-- PyTest 7.4.2
+- Python 3.13.2
+- PyTest 8.3.5
 
 ## Instruction
 

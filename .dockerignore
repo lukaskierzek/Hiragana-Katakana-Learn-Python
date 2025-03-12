@@ -1,9 +1,9 @@
 # Directories
 .idea/
+.pytest_cache/
 
 # Files
 .gitignore
-.pytest_cache
 .dockerignore
 docker-compose.yml
 Dockerfile
