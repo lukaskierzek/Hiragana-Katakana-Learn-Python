@@ -4,6 +4,6 @@ WORKDIR /hiragana_katakana_learn_app
 
 COPY . .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN ls -la
 
-CMD ["python", "Program.py"]
+RUN pip install --no-cache-dir -r requirements.txt

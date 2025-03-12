@@ -1,7 +1,10 @@
 services:
-  hiragana_katakana_learn_app:
-    build: .
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hiraganakatakana_app
     ports:
-      - "5000:5000"
-    volumes:
-      - .:/hiragana_katakana_learn_app
+      - "8000:8000"
+    stdin_open: true
+    tty: true
