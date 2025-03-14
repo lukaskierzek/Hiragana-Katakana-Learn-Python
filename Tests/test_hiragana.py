@@ -1,7 +1,8 @@
 import pytest
 
-from Application.Hiragana.hiragana import Hiragana as h
-from Application.Hiragana.hiragana_syllables import HiraganaGojuuon as hg
+from Application.HiraganaKatakana.hiraganakatakana import HiraganaKatakana as hk
+from Application.Syllables.hiragana_syllables import HiraganaGojuuon as hg
+from Application import app_constans
 
 
 @pytest.fixture
@@ -17,11 +18,11 @@ def number_of_hiragana_gojuuon():
 
 @pytest.fixture
 def hiragana_syllabary_gojuuon_list():
-    return h.syllabary_gojuuon_list()
+    return hk.syllabary_gojuuon_list(app_constans.Syllabaries.HIRAGANA_SYLLABARY)
 
 
 @pytest.mark.parametrize(
-    "excepted_hiragana_syllable, actual_hiragana_syllable",
+    "expected_hiragana_syllable, actual_hiragana_syllable",
     [
         # region syllables vowels
         ("あ", hg.A),
@@ -93,8 +94,8 @@ def hiragana_syllabary_gojuuon_list():
         # endregion
     ]
 )
-def test_hiragana_gojuuon(excepted_hiragana_syllable: str, actual_hiragana_syllable: str):
-    assert excepted_hiragana_syllable == actual_hiragana_syllable
+def test_hiragana_gojuuon(expected_hiragana_syllable: str, actual_hiragana_syllable: str):
+    assert expected_hiragana_syllable == actual_hiragana_syllable
 
 
 def test_number_of_hiragana_gojuuon_is_48(number_of_hiragana_gojuuon):
@@ -117,15 +118,15 @@ def test_number_of_contants_of_hiragana_gojuuon_is_42(number_of_hiragana_gojuuon
 
 def test_hiragana_syllabary_gojuuon_list_contains_all_hiragana_gojuuon():
     expected_list: list[str] = list(map(str, hg))
-    actual_list: list[str] = h.syllabary_gojuuon_list()
+    actual_list: list[str] = hk.syllabary_gojuuon_list(app_constans.Syllabaries.HIRAGANA_SYLLABARY)
     assert expected_list == actual_list
 
 
 def test_get_not_the_same_syllable_from_syllable_list(hiragana_syllabary_gojuuon_list):
-    syllable: str = h.not_the_same_syllable_from_list(hiragana_syllabary_gojuuon_list)
+    syllable: str = hk.not_the_same_syllable_from_list(hiragana_syllabary_gojuuon_list)
     assert syllable not in hiragana_syllabary_gojuuon_list
 
 
 def test_get_random_syllable_from_katkana_syllable_list_is_in_hiragana_syllable_list(hiragana_syllabary_gojuuon_list):
-    syllable = h.random_syllable(hiragana_syllabary_gojuuon_list)
+    syllable = hk.random_syllable(hiragana_syllabary_gojuuon_list)
     assert syllable in hiragana_syllabary_gojuuon_list

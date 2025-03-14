@@ -2,7 +2,7 @@
 .idea/
 Application/__pycache__/
 Application/Katakana/__pycache__/
-Application/Hiragana/__pycache__/
+Application/HiraganaKatakana/__pycache__/
 Tests/__pycache__/
 
 #Files

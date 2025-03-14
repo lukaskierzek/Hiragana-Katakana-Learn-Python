@@ -1,4 +1,4 @@
-from enum import StrEnum, IntEnum
+from enum import StrEnum, IntEnum, Enum, auto
 
 
 class Strings(StrEnum):
@@ -18,3 +18,8 @@ class Strings(StrEnum):
 
 class Numbers(IntEnum):
     MAX_NUMBER_OF_ANSWERS = 4
+
+
+class Syllabaries(Enum):
+    KATAKANA_SYLLABARY = auto()
+    HIRAGANA_SYLLABARY = auto()

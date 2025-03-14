@@ -1,6 +1,5 @@
-from Application import app_constans as appc
-from Application.Hiragana.hiragana import Hiragana as h
-from Application.Katakana.katakana import Katakana as k
+from Application import app_constans
+from Application.HiraganaKatakana.hiraganakatakana import HiraganaKatakana
 from Application.app import App
 
 
@@ -11,15 +10,15 @@ def main():
         match option:
             case "1":
                 App.clear_console()
-                h.learn_syllabary()
+                HiraganaKatakana.learn_syllabary(app_constans.Syllabaries.HIRAGANA_SYLLABARY)
             case "2":
                 App.clear_console()
-                k.learn_syllabary()
+                HiraganaKatakana.learn_syllabary(app_constans.Syllabaries.KATAKANA_SYLLABARY)
             case "3":
-                print(appc.Strings.JAPANESE_SEE_YOU_LATER)
+                print(app_constans.Strings.JAPANESE_SEE_YOU_LATER)
                 return
             case _:
-                App.notice_message(appc.Strings.WRONG_OPTION)
+                App.notice_message(app_constans.Strings.WRONG_OPTION)
 
 
 if __name__ == '__main__':

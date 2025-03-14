@@ -1,13 +1,13 @@
 from os import system, name
 
-import Application.app_constans as appc
+from Application import app_constans
 
 
 class App:
 
     @staticmethod
     def read_option() -> str:
-        return input(appc.Strings.OPTION_NUMBER)
+        return input(app_constans.Strings.OPTION_NUMBER)
 
     @staticmethod
     def show_menu() -> None:
@@ -28,5 +28,5 @@ class App:
 
     @staticmethod
     def notice_good_answer():
-        print(appc.Strings.JAPANESE_CORRECT_ANSWER)
-        print(appc.Strings.AGAIN_QUESTION)
+        print(app_constans.Strings.JAPANESE_CORRECT_ANSWER)
+        print(app_constans.Strings.AGAIN_QUESTION)

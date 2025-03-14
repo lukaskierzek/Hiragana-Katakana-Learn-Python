@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
-
+from Application.app_constans import Syllabaries
 
 class Syllabary(ABC):
 
     @staticmethod
     @abstractmethod
-    def syllabary_gojuuon_list() -> list[str]:
+    def syllabary_gojuuon_list(syllabary: Syllabaries) -> list[str]:
         pass
 
     @staticmethod
@@ -27,10 +27,10 @@ class Syllabary(ABC):
 
     @staticmethod
     @abstractmethod
-    def header_with_answers(answer_list: list[str], syllable: str) -> None:
+    def header_with_answers(answer_list: list[str], syllable: str, syllabary: Syllabaries) -> None:
         pass
 
     @staticmethod
     @abstractmethod
-    def learn_syllabary() -> None:
+    def learn_syllabary(syllabary: Syllabaries) -> None:
         pass

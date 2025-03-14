@@ -15,6 +15,35 @@ and [Hiragana](https://en.wikipedia.org/wiki/Katakana "Article about Katakana") 
 - Python 3.13.2
 - PyTest 8.3.5
 
+## Setup
+To set up the project, follow these steps:
+
+1. Install the necessary dependencies:
+    - [Docker](https://docs.docker.com/engine/install/)
+    - [Git](https://git-scm.com/downloads)
+
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/lukaskierzek/Hiragana-Katakana-Learn-Python.git
+   ```
+   
+3. Change directory to Hiragana-Katakana-Learn-Python:
+   ```bash
+   cd HiraganaKatakana-Katakana-Learn-Python
+   ```
+
+4. Build and run the application using Docker:
+   ```bash
+   docker compose up --build
+   ```
+   
+5. Run a command:
+   ```bash
+   docker compose up -d &&
+   docker exec -it hiraganakatakana_app python Program.py &&
+   docker compose stop
+   ```
+
 ## Instruction
 
 After stating the program, a menu with options is displayed
